@@ -1,0 +1,191 @@
+Different Distributions on Unix
+	Redhat
+	Ubuntu
+	CentOS
+	Fedora
+	Suse
+	Debian
+	Sun Solaris
+	HP UX
+	IBM AIX
+	
+Types of Users in Linux
+	Root - Is a super user for Admin purpose
+	Normal User - apart from Root Everybody as a user only
+
+Basic Commands in Linux
+	whoami - It will show you current user name
+	sudo -i - switch to Root user ( Admin )
+	pwd - Present working Directory
+	ls - List of files/folders in current dir
+	id - It will show current user
+	cd - change directory
+
+Directory structure in Linux
+	/ - Main directory in Linux
+	/root - Root home dorectory
+	/home - Except Root all user home dir available ( Ex: /home/amar, /home/krishna
+	/etc - Application Configuration files will be available
+	/tmp - Can create temporary files
+	/dev - Device files will be available
+	/boot - Operating system Bootable files
+	/bin, /usr/bin, /sbin, /usr/sbin
+[9:25 p.m., 2019-12-03] Amar Bro Devops: /bin, /usr/bin, /sbin, /usr/sbin  :  these directories are for command file 
+	
+	which command : tell about location of command
+	
+	User management :
+	useradd <username>
+	
+	How to set password : 
+	use command <passwd>
+	
+	component created with user creation: 
+	username
+	userid
+	group name
+	group id
+	home directory
+	switch user : su - sumit123
+	
+
+
+File management
+	create a directory: mkdir <name>
+	Delete a directory:
+	rm -rf <directory name>
+	rf: delete recursively and forcefully including all subdirectories
+	man <command name> : display all details of a command and its functionality 
+	
+	create a file: File can be creted using 3 commands
+	1) touch: To create a empty file 
+	syntax : touch <file name>
+	
+	
+	2) cat : 
+	Syntax: cat > filename 
+	create new file and add the data / it will override the data if already exist in that file
+	
+	cat filename : to show content of a file
+	
+	cat >> filename : create a new file and add the data / append the data if already exist 
+	
+	3) Vi : Three types of modes
+	
+	1) escape mode : gg ,G 
+	
+	G: move cursor to last line in file
+	2gg :  move cursor to second line
+	6gg: move cursor to 6th line
+	dd: delete the line where cursor is pointing
+	5dd: delete 5th lines from cursor
+	yy : copy the entire line where cursor is pointing
+	2yy: copy two line from cursor
+	p: paste the line
+	
+	2) insert mode : i, I ,a, A, o, O (options)
+	
+	i: used to insert text befor cursor
+	I :insert text at beginning of current line, until <Esc> hit
+	a: append text after cursor,until <Esc> hit
+	A: append text to end of current line,until <Esc> hit
+	o: open and put text in a new line below current line ,until <Esc> hit
+	O: open and put text in a new line above current line,until <Esc> hit
+	
+	3) command mode : wq (save and quit) , w (save without quit) , q! (quit without save)
+
+
+
+
+How to provide a sudo access:
+
+/etc/sudoers
+
+Ownership and permissions:
+
+owner: who creates the file.
+group: who creates the file other:apart from owner and group all are other users.
+
+-rw-r--r--. 1 root root 584 Dec  4 06:35 ajay
+
+( - ): It is a file type,here the '-' is nothing but file.If you see d in the first field it is directory.
+
+(rw-): These permissions are for owner(root).
+
+(r--): These permissions are for group(root).
+
+(r--): These are for other users.
+
+drwx------. 3 root root  17 Dec  4 16:59 systemd-private-5fd227d8a4ef48e6b5c6882e39a20c34-chronyd.service-BlH8yz
+
+(d): d in the first field ,so it is a directory.
+
+-rw-rw-r--. 1 devops devops   0 Dec  4 17:53 devops
+
+
+
+How to change ownerships:
+
+ chown (desired owner) (to which file/directory you would like to change).
+
+How to change the group:
+
+chgrp (desired group) (to which file/directory you would like to change).
+
+How to change permissions:
+
+let
+read =4      CHMOD UGO=777
+write=2
+execute=1
+
+eg:644= rw-r-r--
+777=rwx-rwx-rwx-
+755=rwx-rx-rx
+
+command:
+chmod (desired number) (desird file name to change)
+660
+-rw-rw----. 1 root root   0 Dec  4 17:53 devops
+
+
+
+Package management:
+
+Yum install (package name).
+
+To know how mny files installed:
+
+rpm -qa
+
+java-1.8.0-openjdk-1.8.0.232.b09-0.el7_7.x86_64
+
+Service Management:
+eg:
+ to maintain web server we need to install httpd
+
+to run the application we need to start the service by a command
+
+systemctl status (service name)
+systemctl start/stop/restart (service name) for doing respetive functions.
+
+
+
+
+Process management:
+
+Process management:
+Process: It is nothing but a task or command running in your system.
+Process id: Every process will have a unique-id.
+How to kill a process?
+Kill -9 <process id>
+Top command:
+Top is one of the important process management tools where I can find process list in CPU and memory utilization order by pressing shift-p and shift-m respectively and also we can see how much total RAM and CPU being utilized.
+Topics covered in Linux:
+1. Directory structure
+2. User management
+3. File management
+4. Permissions and Ownerships
+5. Service management
+6. Package management
+7. Process management
